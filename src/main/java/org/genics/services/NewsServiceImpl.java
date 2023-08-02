@@ -8,6 +8,7 @@ import org.genics.repo.NewsRepository;
 import org.modelmapper.ModelMapper;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class NewsServiceImpl implements NewsService {
@@ -24,7 +25,7 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public boolean delete(Long id) {
+    public Boolean delete(Long id) {
         News news = this.get(id);
         newsRepository.delete(news);
         return true;
@@ -43,6 +44,6 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public List<News> getAll() {
-        return newsRepository.findAll().stream().toList();
+        return newsRepository.findAll().stream().collect(Collectors.toList());
     }
 }
