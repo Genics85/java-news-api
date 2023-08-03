@@ -2,6 +2,7 @@ package org.genics.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import org.genics.repo.News;
 import org.genics.repo.NewsCreateDto;
 import org.genics.repo.NewsRepository;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
+@Transactional
 public class NewsServiceImpl implements NewsService {
 
     ModelMapper mapper = new ModelMapper();

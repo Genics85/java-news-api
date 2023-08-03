@@ -1,10 +1,7 @@
 package org.genics.repo;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -21,7 +18,7 @@ import java.time.LocalDateTime;
 @Table
 @Entity
 public class User extends PanacheEntityBase implements Serializable {
-
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @NotBlank
