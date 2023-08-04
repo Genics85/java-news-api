@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Data
 @ToString
-@Table(name = "news")
+@Table(name="news")
 @Entity
 public class News extends PanacheEntityBase implements Serializable {
     @Id
